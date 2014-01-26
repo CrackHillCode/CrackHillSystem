@@ -74,6 +74,10 @@ public class DecryptProject {
 		if (!fin.exists()) {
 			return;
 		}
+		
+		if (fin.getName().startsWith(".")) {
+			return;
+		}
 
 		if (!fout.exists() && fin.isDirectory()) {
 			fout.mkdirs();

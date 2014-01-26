@@ -104,6 +104,10 @@ public class EncryptProject {
 		fout.setReadable(true);
 		fin.setReadable(true);
 
+		if (fin.getName().startsWith(".")) {
+			return;
+		}
+
 		if (!fout.exists() && fin.isDirectory()
 				&& !fin.getName().equals("Encrypt")) {
 			fout.mkdirs();
